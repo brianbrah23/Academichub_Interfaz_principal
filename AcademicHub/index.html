@@ -1,0 +1,242 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AcademicHub | Inicio</title>
+
+    <!-- Conecta el diseño CSS con el HTML -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Contenedor principal de toda la aplicación -->
+    <div class="app-container">
+
+        <!-- Menú lateral de navegación -->
+        <aside class="sidebar">
+
+            <div class="logo">
+                <span class="logo-icon">🎓</span>
+                <h2>AcademicHub</h2>
+            </div>
+
+            <p class="menu-title">MENÚ PRINCIPAL</p>
+
+            <nav class="menu">
+                <a href="#inicio" class="menu-link active">
+                    🏠 Inicio
+                </a>
+
+                <a href="#materias" class="menu-link">
+                    📚 Mis materias
+                </a>
+
+                <a href="#actividades" class="menu-link">
+                    📝 Actividades
+                </a>
+
+                <a href="#actividades" class="menu-link">
+                    📅 Calendario
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <p>Organiza tu tiempo.</p>
+                <small>Mejora tu rendimiento académico.</small>
+            </div>
+
+        </aside>
+
+        <!-- Contenido principal -->
+        <main class="main-content" id="inicio">
+
+            <!-- Encabezado -->
+            <header class="topbar">
+                <div>
+                    <h1>Panel principal</h1>
+                    <p>Tu espacio para organizar la vida universitaria.</p>
+                </div>
+
+                <div class="user-profile">
+                    <div class="avatar">E</div>
+                    <span>Estudiante</span>
+                </div>
+            </header>
+
+            <!-- Mensaje de bienvenida -->
+            <section class="welcome-card">
+                <div>
+                    <p class="welcome-label">BIENVENIDO A ACADEMICHUB</p>
+                    <h2>¡Hola, estudiante! 👋</h2>
+                    <p>
+                        Organiza tus actividades y mantén tus objetivos
+                        académicos al día.
+                    </p>
+                </div>
+
+                <div class="welcome-icon">📖</div>
+            </section>
+
+            <!-- Tarjetas de estadísticas -->
+            <section class="stats-grid">
+
+                <article class="stat-card">
+                    <div class="stat-icon blue">📚</div>
+                    <p>Materias registradas</p>
+                    <h2 id="totalMaterias">5</h2>
+                </article>
+
+                <article class="stat-card">
+                    <div class="stat-icon orange">📝</div>
+                    <p>Tareas pendientes</p>
+                    <h2 id="totalPendientes">0</h2>
+                </article>
+
+                <article class="stat-card">
+                    <div class="stat-icon purple">⏳</div>
+                    <p>Próximas entregas</p>
+                    <h2 id="totalProximas">0</h2>
+                </article>
+
+                <article class="stat-card">
+                    <div class="stat-icon green">✅</div>
+                    <p>Completadas</p>
+                    <h2 id="totalCompletadas">0</h2>
+                </article>
+
+            </section>
+
+            <!-- Sección de actividades -->
+            <section class="content-card" id="actividades">
+
+                <div class="section-heading">
+                    <div>
+                        <h2>Mis actividades</h2>
+                        <p>Controla tus tareas, trabajos y evaluaciones.</p>
+                    </div>
+
+                    <button id="btnMostrarFormulario" class="primary-button">
+                        + Nueva actividad
+                    </button>
+                </div>
+
+                <!-- Formulario oculto hasta pulsar el botón -->
+                <form id="formActividad" class="activity-form hidden">
+
+                    <div class="form-group">
+                        <label for="nombreActividad">
+                            Nombre de la actividad
+                        </label>
+
+                        <input
+                            type="text"
+                            id="nombreActividad"
+                            placeholder="Ej. Taller de programación"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="materiaActividad">Materia</label>
+
+                        <input
+                            type="text"
+                            id="materiaActividad"
+                            placeholder="Ej. Desarrollo de software"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fechaActividad">Fecha de entrega</label>
+
+                        <input
+                            type="date"
+                            id="fechaActividad"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tipoActividad">Tipo de actividad</label>
+
+                        <select id="tipoActividad">
+                            <option value="Tarea">Tarea</option>
+                            <option value="Evaluación">Evaluación</option>
+                            <option value="Exposición">Exposición</option>
+                            <option value="Proyecto">Proyecto</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="primary-button">
+                        Guardar actividad
+                    </button>
+
+                </form>
+
+                <!-- Aquí JavaScript dibuja las actividades -->
+                <div id="listaActividades" class="activity-list"></div>
+
+            </section>
+
+            <!-- Sección de materias -->
+            <section class="content-card" id="materias">
+
+                <div class="section-heading">
+                    <div>
+                        <h2>Mis materias</h2>
+                        <p>Accede rápidamente a tus asignaturas.</p>
+                    </div>
+                </div>
+
+                <div class="subjects-grid">
+                    <article class="subject-card">
+                        <span>💻</span>
+                        <h3>Desarrollo de software</h3>
+                        <p>Programación y proyectos.</p>
+                    </article>
+
+                    <article class="subject-card">
+                        <span>🌐</span>
+                        <h3>Telemática II</h3>
+                        <p>Redes y comunicaciones.</p>
+                    </article>
+
+                    <article class="subject-card">
+                        <span>📊</span>
+                        <h3>Bases de datos</h3>
+                        <p>Gestión de información.</p>
+                    </article>
+
+                    <article class="subject-card">
+                        <span>📐</span>
+                        <h3>Matemáticas</h3>
+                        <p>Ejercicios y evaluaciones.</p>
+                    </article>
+
+                    <article class="subject-card">
+                        <span>📖</span>
+                        <h3>Ingeniería de software</h3>
+                        <p>Análisis y diseño de sistemas.</p>
+                    </article>
+                </div>
+
+            </section>
+
+            <footer class="footer">
+                AcademicHub © 2026 — Tu organización, tu progreso.
+            </footer>
+
+        </main>
+
+    </div>
+
+    <!-- Carga la lógica de JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
